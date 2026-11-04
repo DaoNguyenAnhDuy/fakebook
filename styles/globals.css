@@ -601,19 +601,254 @@ html, body {
 .toast.error   { background: #fdecea; color: #b71c1c; border: 1px solid #f5c6c6; }
 
 /* ══════════════════════════════
-   RESPONSIVE
+   RESPONSIVE - TABLET & MOBILE
 ══════════════════════════════ */
 @media (max-width: 1024px) {
-  .slogan .ln, .slogan .lna { font-size: 2.6rem; }
+  .left { padding: 2rem; }
+  .slogan .ln, .slogan .lna { font-size: 2.5rem; }
+  .sc-a { width: 175px; height: 270px; }
+  .sc-b { width: 160px; height: 190px; }
+  .sc-c { width: 190px; }
 }
+
 @media (max-width: 768px) {
-  .container { flex-direction: column; }
-  .left, .right { flex: none; width: 100%; }
-  .left { min-height: 60vh; padding: 1.5rem; }
-  .slogan .ln, .slogan .lna { font-size: 2rem; }
-  .right { padding: 1.5rem 1rem; }
+  .container {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .left, .right {
+    flex: none;
+    width: 100%;
+  }
+
+  .left {
+    min-height: auto;
+    padding: 1.75rem 1.25rem 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-wrap {
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+
+  .logo-text {
+    font-size: 1.75rem;
+  }
+
+  .slogan {
+    margin: 0.5rem 0 1rem;
+    text-align: center;
+  }
+
+  .slogan .ln, .slogan .lna {
+    font-size: 1.75rem;
+    letter-spacing: -0.6px;
+    line-height: 1.25;
+    display: inline;
+  }
+
+  .slogan .ln:first-child::after,
+  .slogan .ln:nth-child(2)::after {
+    content: " ";
+  }
+
+  /* ── Mobile Collage: gọn gàng, cân đối, không đè lấn ── */
+  .collage {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    height: 230px;
+    margin: 0.75rem auto 0.5rem;
+  }
+
+  /* Card A – Thẻ ảnh chính (bên phải) */
+  .sc-a {
+    width: 155px;
+    height: 215px;
+    right: 12px;
+    top: 5px;
+    border-radius: 20px;
+    z-index: 4;
+  }
+  .sc-a .ph {
+    height: 145px;
+  }
+  .sc-a .ph .big-emoji {
+    font-size: 4rem;
+  }
+  .sc-a .time-pill {
+    font-size: 0.55rem;
+    padding: 2px 7px;
+    top: 8px;
+    right: 8px;
+  }
+  .sc-a .info {
+    padding: 0.4rem 0.65rem;
+  }
+  .sc-a .info .name {
+    font-size: 0.72rem;
+  }
+  .sc-a .info .sub {
+    font-size: 0.58rem;
+  }
+  .sc-a .info .stats {
+    font-size: 0.58rem;
+    margin-top: 3px;
+    gap: 0.5rem;
+  }
+
+  /* Card B – Thẻ đan len (nằm chéo phía sau bên trái) */
+  .sc-b {
+    width: 135px;
+    height: 165px;
+    left: 12px;
+    top: 10px;
+    border-radius: 20px;
+    z-index: 2;
+    opacity: 0.95;
+  }
+  .sc-b .ph {
+    height: 120px;
+  }
+  .sc-b .ph .big-emoji {
+    font-size: 3.2rem;
+  }
+  .sc-b .card-foot {
+    padding: 0.35rem 0.6rem;
+  }
+  .sc-b .card-foot .label {
+    font-size: 0.6rem;
+  }
+
+  /* Card C – Thẻ bình luận (đặt khéo ở góc dưới bên trái) */
+  .sc-c {
+    width: 195px;
+    left: 8px;
+    bottom: 8px;
+    padding: 0.6rem 0.75rem;
+    border-radius: 18px;
+    z-index: 5;
+  }
+  .sc-c .user-row {
+    margin-bottom: 0.35rem;
+    gap: 0.4rem;
+  }
+  .sc-c .av {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+  .sc-c .user-info .name {
+    font-size: 0.68rem;
+  }
+  .sc-c .user-info .time {
+    font-size: 0.55rem;
+  }
+  .sc-c .msg {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 10px;
+    line-height: 1.35;
+  }
+  .sc-c .react-row {
+    margin-top: 0.35rem;
+    gap: 0.25rem;
+  }
+  .sc-c .react-row .rpill {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+  }
+
+  /* Ẩn các chi tiết thừa gây rối trên màn hình điện thoại nhỏ */
+  .sc-d,
+  .sc-e,
+  .av-stack {
+    display: none !important;
+  }
+
+  /* Thu nhỏ các icon emoji & tim bay nhẹ */
+  .badge-heart {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    top: 25px;
+    right: 5px;
+  }
+  .badge-emoji {
+    font-size: 1.3rem;
+    padding: 3px 6px;
+    top: -5px;
+    left: 45%;
+  }
+
+  /* ── Right section (Auth Form) ── */
+  .right {
+    padding: 1.5rem 1rem 3rem;
+    min-height: auto;
+    background: #f0f2f5;
+  }
+
+  .card-auth {
+    padding: 1.5rem 1.25rem;
+    border-radius: 20px;
+    max-width: 100%;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+  }
+
+  .card-auth h2 {
+    font-size: 1.3rem;
+  }
+
+  .card-auth .subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 1.1rem;
+  }
+
+  /* Cỡ chữ 16px để chống tự động zoom của iPhone Safari! */
+  .input-wrap input {
+    font-size: 16px;
+    padding: 0.72rem 0.95rem;
+    border-radius: 12px;
+  }
+
+  .row-inline {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .btn-submit {
+    padding: 0.85rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
 }
-@media (max-width: 480px) {
-  .row-inline { flex-direction: column; gap: 0; }
-  .slogan .ln, .slogan .lna { font-size: 1.65rem; }
+
+@media (max-width: 380px) {
+  .left {
+    padding: 1.25rem 0.85rem 1.5rem;
+  }
+  .slogan .ln, .slogan .lna {
+    font-size: 1.45rem;
+  }
+  .collage {
+    max-width: 300px;
+    height: 215px;
+  }
+  .sc-a {
+    width: 140px;
+    height: 195px;
+    right: 5px;
+  }
+  .sc-c {
+    width: 175px;
+  }
 }
