@@ -1,9 +1,11 @@
 // components/AuthForm.tsx
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 type Mode = 'login' | 'register';
 
 export default function AuthForm() {
+  const router = useRouter();
   const [mode, setMode] = useState<Mode>('login');
   const [showPass, setShowPass] = useState(false);
   const [showPass2, setShowPass2] = useState(false);
@@ -52,7 +54,9 @@ export default function AuthForm() {
         });
         const data = await res.json();
         if (res.ok) {
-          setMsg({ type: 'success', text: `Chào mừng trở lại, ${data.name}!` });
+          localStorage.setItem('fb_name', data.name);
+          localStorage.setItem('fb_userId', String(data.userId));
+          router.push('/feed');
         } else {
           setMsg({ type: 'error', text: data.error || 'Email/SĐT hoặc mật khẩu không đúng.' });
         }
