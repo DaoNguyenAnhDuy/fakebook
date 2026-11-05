@@ -95,9 +95,9 @@ export default function Feed() {
         <nav className="fb-nav">
           {/* Left */}
           <div className="fb-nav-left">
-            <div className="fb-logo-circle">f</div>
+            <div className="fb-logo-circle"><span className="reverse-f">f</span></div>
             <div className="fb-search-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#606770" strokeWidth="2" width="16" height="16">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#606770" strokeWidth="2" width="18" height="18">
                 <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
               </svg>
               <input type="text" placeholder="Tìm kiếm trên Fakebook" readOnly />
@@ -119,21 +119,21 @@ export default function Feed() {
           {/* Right */}
           <div className="fb-nav-right">
             <div className="fb-nav-user" onClick={handleLogout} title="Đăng xuất">
-              <DefaultAvatar size={36} />
+              <DefaultAvatar size={40} />
               <span className="fb-nav-name">{userName}</span>
             </div>
             <button className="fb-icon-btn" title="Menu">
-              <svg viewBox="0 0 24 24" fill="#050505" width="18" height="18">
-                <circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/>
+              <svg viewBox="0 0 24 24" fill="#050505" width="28" height="28">
+                <circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="12" r="2.2"/>
               </svg>
             </button>
             <button className="fb-icon-btn" title="Messenger">
-              <svg viewBox="0 0 24 24" fill="#050505" width="18" height="18">
+              <svg viewBox="0 0 24 24" fill="#050505" width="28" height="28">
                 <path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.14.26.34.27.56l.05 1.73c.04.47.52.77.95.59l1.93-.85c.16-.07.34-.09.51-.05.63.17 1.29.26 1.97.26C16.52 21.11 22 16.84 22 11.7S17.64 2 12 2zM18 9.5l-2.78 4.4c-.45.71-1.44.9-2.1.4l-2.21-1.66a.6.6 0 00-.72 0L7.6 14.1c-.38.29-.88-.17-.63-.59l2.78-4.4c.45-.71 1.44-.9 2.1-.4l2.21 1.66a.6.6 0 00.72 0l2.59-1.96c.38-.29.88.17.63.59z"/>
               </svg>
             </button>
             <button className="fb-icon-btn" title="Thông báo">
-              <svg viewBox="0 0 24 24" fill="#050505" width="18" height="18">
+              <svg viewBox="0 0 24 24" fill="#050505" width="28" height="28">
                 <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5S10.5 3.17 10.5 4v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
               </svg>
             </button>
@@ -309,29 +309,35 @@ export default function Feed() {
         ══════════════════════════════ */
         .fb-nav {
           position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-          height: 56px;
+          height: 60px;
           background: #fff;
           display: flex; align-items: center; justify-content: space-between;
-          padding: 0 12px;
+          padding: 0 16px;
           box-shadow: 0 1px 2px rgba(0,0,0,0.12);
         }
 
-        .fb-nav-left { display: flex; align-items: center; gap: 8px; min-width: 240px; }
+        .fb-nav-left { display: flex; align-items: center; gap: 10px; min-width: 240px; }
         .fb-logo-circle {
-          width: 40px; height: 40px; border-radius: 50%;
+          width: 46px; height: 46px; border-radius: 50%;
           background: #1877f2;
           display: flex; align-items: center; justify-content: center;
-          color: white; font-size: 1.5rem; font-weight: 900;
+          color: white; font-size: 2.2rem; font-weight: 900;
           flex-shrink: 0;
+          user-select: none;
+        }
+        .reverse-f {
+          display: inline-block;
+          transform: scaleX(-1);
+          line-height: 1;
         }
         .fb-search-box {
           display: flex; align-items: center; gap: 8px;
           background: #f0f2f5; border-radius: 999px;
-          padding: 7px 14px; min-width: 220px;
+          padding: 8px 16px; min-width: 220px;
         }
         .fb-search-box input {
           background: none; border: none; outline: none;
-          color: #050505; font-size: 0.875rem; width: 100%;
+          color: #050505; font-size: 0.9rem; width: 100%;
         }
 
         .fb-nav-center { display: flex; align-items: center; gap: 8px; }
@@ -352,29 +358,31 @@ export default function Feed() {
         }
 
         .fb-nav-right {
-          display: flex; align-items: center; gap: 8px;
+          display: flex; align-items: center; gap: 10px;
           min-width: 240px; justify-content: flex-end;
         }
         .fb-nav-user {
-          display: flex; align-items: center; gap: 6px;
+          display: flex; align-items: center; gap: 8px;
           cursor: pointer; border-radius: 999px;
-          padding: 4px 8px; transition: background 0.15s;
+          padding: 4px 10px; transition: background 0.15s;
         }
         .fb-nav-user:hover { background: #f0f2f5; }
-        .fb-nav-name { font-size: 0.85rem; font-weight: 600; color: #050505; }
+        .fb-nav-name { font-size: 0.9rem; font-weight: 600; color: #050505; }
         .fb-icon-btn {
-          width: 36px; height: 36px; border-radius: 50%;
+          width: 46px; height: 46px; border-radius: 50%;
           background: #e4e6eb; border: none; cursor: pointer;
           display: flex; align-items: center; justify-content: center;
-          transition: background 0.15s;
+          transition: background 0.15s, transform 0.1s;
+          flex-shrink: 0;
         }
         .fb-icon-btn:hover { background: #d8dadf; }
+        .fb-icon-btn:active { transform: scale(0.96); }
 
         /* ══════════════════════════════
            BODY
         ══════════════════════════════ */
         .fb-body {
-          padding-top: 56px;
+          padding-top: 60px;
           display: flex;
           min-height: 100vh;
         }
@@ -384,7 +392,7 @@ export default function Feed() {
         ══════════════════════════════ */
         .fb-sidebar {
           width: 280px; min-width: 280px;
-          position: fixed; top: 56px; left: 0; bottom: 0;
+          position: fixed; top: 60px; left: 0; bottom: 0;
           overflow-y: auto; padding: 12px 8px 24px;
           background: transparent;
           scrollbar-width: thin;

@@ -17,7 +17,7 @@ export default function Home() {
 
           {/* Logo */}
           <div className="logo-wrap">
-            <div className="logo-icon">f</div>
+            <div className="logo-icon"><span className="reverse-f">f</span></div>
             <span className="logo-text">Fakebook</span>
           </div>
 
