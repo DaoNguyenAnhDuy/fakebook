@@ -14,27 +14,27 @@ const DefaultAvatar = ({ size = 40 }: { size?: number }) => (
 
 /* ── SVG Icons ── */
 const IconHome = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
     <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
   </svg>
 );
 const IconVideo = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
     <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-10 9l-5-3.5v7l5-3.5zm5 0l-5 3.5V8.5L16 12z"/>
   </svg>
 );
 const IconFriends = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
     <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
   </svg>
 );
 const IconMarket = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
     <path d="M19 6H17.82C17.4 4.84 16.3 4 15 4H9C7.7 4 6.6 4.84 6.18 6H5C3.9 6 3 6.9 3 8v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7 11l-4-4h2.5V9h3v4H16l-4 4z"/>
   </svg>
 );
 const IconGaming = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
     <path d="M15 7.5V2H9v5.5l3 3 3-3zM7.5 9H2v6h5.5l3-3-3-3zM9 16.5V22h6v-5.5l-3-3-3 3zM16.5 9l-3 3 3 3H22V9h-5.5z"/>
   </svg>
 );
@@ -227,11 +227,6 @@ export default function Feed() {
                 sản phẩm này là sản phẩm hư cấu phục vụ cho mục đích học tập
               </div>
 
-              {/* BIG TITLE above video */}
-              <div className="fb-post-big-title">
-                Chúc mừng bạn đã bị lừa 🎭
-              </div>
-
               {/* VIDEO SLOT */}
               <div className="fb-video-slot">
                 {/* ===== DÁN THẺ VIDEO VÀO ĐÂY ===== */}
@@ -339,15 +334,15 @@ export default function Feed() {
           color: #050505; font-size: 0.875rem; width: 100%;
         }
 
-        .fb-nav-center { display: flex; align-items: center; gap: 2px; }
+        .fb-nav-center { display: flex; align-items: center; gap: 8px; }
         .fb-nav-btn {
           position: relative;
           background: none; border: none; cursor: pointer;
           color: #65676B; border-radius: 10px;
-          padding: 8px 32px;
+          padding: 8px 48px;
           transition: background 0.15s, color 0.15s;
           display: flex; flex-direction: column; align-items: center;
-          min-width: 100px;
+          min-width: 120px;
         }
         .fb-nav-btn:hover { background: #f0f2f5; color: #1877f2; }
         .fb-nav-btn.active { color: #1877f2; }
