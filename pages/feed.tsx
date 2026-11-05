@@ -87,6 +87,9 @@ export default function Feed() {
       <Head>
         <title>Fakebook</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
 
       <div className="fb-wrap">
