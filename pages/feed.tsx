@@ -384,18 +384,22 @@ export default function Feed() {
         .fb-body {
           padding-top: 60px;
           display: flex;
+          justify-content: center;
           min-height: 100vh;
+          width: 100%;
+          position: relative;
         }
 
         /* ══════════════════════════════
            LEFT SIDEBAR – white, light
         ══════════════════════════════ */
         .fb-sidebar {
-          width: 280px; min-width: 280px;
+          width: 260px; min-width: 260px;
           position: fixed; top: 60px; left: 0; bottom: 0;
           overflow-y: auto; padding: 12px 8px 24px;
           background: transparent;
           scrollbar-width: thin;
+          z-index: 10;
         }
         .fb-sidebar-user {
           display: flex; align-items: center; gap: 10px;
@@ -425,14 +429,14 @@ export default function Feed() {
            CENTER FEED
         ══════════════════════════════ */
         .fb-feed {
-          flex: 1;
-          margin-left: 280px;
+          width: 100%;
+          max-width: 680px;
+          margin: 0 auto;
           padding: 24px 16px;
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 16px;
-          max-width: 100%;
         }
 
         /* ━━ STORY BAR ━━ */
@@ -584,9 +588,11 @@ export default function Feed() {
         /* ══════════════════════════════
            RESPONSIVE
         ══════════════════════════════ */
-        @media (max-width: 1000px) {
+        @media (max-width: 1180px) {
           .fb-sidebar { display: none; }
-          .fb-feed { margin-left: 0; padding: 16px 8px; }
+        }
+        @media (max-width: 900px) {
+          .fb-feed { padding: 16px 8px; }
           .fb-nav-center { display: none; }
           .fb-nav-name { display: none; }
           .fb-story-bar, .fb-composer, .fb-post { max-width: 100%; }
