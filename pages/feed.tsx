@@ -327,7 +327,7 @@ export default function Feed() {
         }
         .reverse-f {
           display: inline-block;
-          transform: scaleX(-1);
+          transform: rotate(180deg);
           line-height: 1;
         }
         .fb-search-box {
